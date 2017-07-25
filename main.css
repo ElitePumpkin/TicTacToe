@@ -1,0 +1,54 @@
+html {
+    height: 80%;
+}
+
+body {
+    height: 100%;
+
+}
+
+h2 {
+    height: 40px;
+    letter-spacing: 4px;
+    text-align: center;
+
+}
+
+.container {
+    width: auto;
+    height: auto;
+    background-color: green;
+}
+
+.game-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 154px;
+    height: 154px;
+    background-color: red;
+}
+
+.game-box {
+    display: inline-block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    border: 0.001em solid white;
+}
+
+.game-info-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    width: 300px;
+}
+#game-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: auto;
+    background-color: salmon;
+}
+#game-info span {
+    margin-left: auto;
+    margin-right: auto;
+}
