@@ -43,9 +43,18 @@ h2 {
     background-color: ghostwhite;
 }
 
+.winning-tiles {
+    background-color: rgba(16, 252, 20, 0.40) !important;
+}
+
+.draw-tiles {
+    background-color: rgba(255, 255, 0, 0.40) !important;
+}
+
 #box-0 {
     border-right: 1px solid #547190;
     border-bottom: 1px solid #547190;
+    border-top-left-radius: 22px;
 }
 
 #box-1 {
@@ -55,6 +64,7 @@ h2 {
 
 #box-2 {
     border-bottom: 1px solid #547190;
+    border-top-right-radius: 22px;
 }
 
 #box-3 {
@@ -73,10 +83,15 @@ h2 {
 
 #box-6 {
     border-right: 1px solid #547190;
+    border-bottom-left-radius: 22px;
 }
 
 #box-7 {
     border-right: 1px solid #547190;
+}
+
+#box-8 {
+    border-bottom-right-radius: 22px;
 }
 
 .taken {

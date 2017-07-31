@@ -8,6 +8,7 @@ $(document).ready(function () {
 var playerO = new Player("o", "John Travolta");
 var playerX = new Player("x", "Johny Bravo");
 var currentPlayer = undefined;
+var currentWinning = undefined;
 var inGame = false;
 var winningBoxes = [[0,3,6],[1,4,7],[2,5,8],[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6]];
 
@@ -44,6 +45,7 @@ function checkIfWon (player) {
         if((player.currentFields.indexOf(winningBoxes[i][0]) > -1 &&
             player.currentFields.indexOf(winningBoxes[i][1]) > -1) &&
             player.currentFields.indexOf(winningBoxes[i][2]) > -1) {
+            enableWinClass(winningBoxes[i]);
             return true;
         }
     }
@@ -97,11 +99,28 @@ function prepareGame() {
     updateStatus();
 }
 
+function enableDrawClass() {
+    $('.game-box').addClass('draw-tiles',1300);
+}
+
+function enableWinClass(winningCoords) {
+    $.each(winningCoords, function(index,value) {
+        console.log("We are at index: " + index + " and the value is " + value);
+        $("#box-" + value).addClass('winning-tiles',1300);
+    })
+}
+
+function disableWinDrawClass () {
+    $('.game-box').removeClass('winning-tiles');
+    $('.game-box').removeClass('draw-tiles');
+}
+
 function clearGrid() {
     $('.game-box').css({
         'background': ''
     }).removeClass('taken');
     $('#current-player-text').text("Current player: ");
+    disableWinDrawClass();
 }
 
 function playGame () {
@@ -124,7 +143,7 @@ function playGame () {
                 updateStatus();
             }
             else if (checkIfDraw()) {
-                $('.game-box').css("cursor", 'default');
+                enableDrawClass();
                 $('#current-player-text').text("Draw! ");
                 endGame();
                 updateStatus();
@@ -134,7 +153,6 @@ function playGame () {
             }
         }
     })
-
 }
 
 function endGame (winner) {
@@ -145,6 +163,7 @@ function endGame (winner) {
         console.log("Game ended with draw");
     }
     inGame = false;
+    $('.game-box').css("cursor", 'default');
     $('#new-game').text("New Game");
     playGame();
 }
