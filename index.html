@@ -2,31 +2,40 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:600" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-    <title>Image Slider</title>
+    <title>Tic Tac Toe Game</title>
 </head>
 
 <body>
     <h2>Tic Tac Toe</h2>
     <div class="game-info-wrapper">
         <div id="game-info">
-            <span>Current player: </span>
-            <span id="current-player">Player 1</span>
-            <span id="game-status" data="in-game">Game in progress</span>
+            <span id="current-player-text">Current player: </span>
+            <div id="current-player"></div>
+            <button id="new-game">New Game</button>
         </div>
     </div>
     <div class="container">
 
         <div class="game-container">
-            <div class="game-box" id="box-0" data-row="0" data-col="0"></div>
-            <div class="game-box" id="box-1" data-row="0" data-col="1"></div>
-            <div class="game-box" id="box-2" data-row="0" data-col="2"></div>
-            <div class="game-box" id="box-3" data-row="1" data-col="0"></div>
-            <div class="game-box" id="box-4" data-row="1" data-col="1"></div>
-            <div class="game-box" id="box-5" data-row="1" data-col="2"></div>
-            <div class="game-box" id="box-6" data-row="2" data-col="0"></div>
-            <div class="game-box" id="box-7" data-row="2" data-col="1"></div>
-            <div class="game-box" id="box-8" data-row="2" data-col="2"></div>
+            <div class="game-box" id="box-0" data-id="0"></div>
+            <div class="game-box" id="box-1" data-id="1"></div>
+            <div class="game-box" id="box-2" data-id="2"></div>
+            <div class="game-box" id="box-3" data-id="3"></div>
+            <div class="game-box" id="box-4" data-id="4"></div>
+            <div class="game-box" id="box-5" data-id="5"></div>
+            <div class="game-box" id="box-6" data-id="6"></div>
+            <div class="game-box" id="box-7" data-id="7"></div>
+            <div class="game-box" id="box-8" data-id="8"></div>
+        </div>
+    </div>
+
+    <div class="footer-wrapper">
+        <div class="footer">
+            Icons by Freepik from Flaticon
+            <br><br>
+            Iwo Malyszka &#169; 2017
         </div>
     </div>
 
